@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="Top5">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
@@ -18,15 +18,8 @@
   </head>
   <body>
 
-    <div class="hero-unit">
-      <h1>'Sup</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML Template</li>
-        <li>Normalize CSS</li>
-        <li>Sass</li>
-      </ul>
-      <p>Don't forget to update your readme file.</p>
+    <div class="container row">
+      <div class="large-12 columns" ng-view></div>
     </div>
 
     <!-- build:js scripts/vendor.js -->
@@ -38,6 +31,7 @@
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
+    <script src="scripts/lists/lists.controller.js"></script>
     <!-- endbuild -->
 
 

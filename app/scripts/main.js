@@ -17,4 +17,24 @@
 
   })
 
+  .config([ '$routeProvider', function ($routeProvider) {
+
+    $routeProvider
+
+    // Home Page | List of Lists
+    .when('/', {
+      templateUrl: 'scripts/lists/lists.home.tpl.html',
+      controller: 'ListCtrl'
+    })
+
+    .when('/login', {
+      // Login Page
+    })
+
+    .when('/register', {
+      // register page
+    })
+    
+  }])
+
 }());
