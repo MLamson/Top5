@@ -2,10 +2,9 @@
   
   'use strict';
 
-  angular.module('Top5', ['ngRoute'])
+  angular.module('Top5', ['ngRoute', 'ngCookies'])
 
   .constant('PARSE', {
-
     URL: 'https://api.parse.com/1/',
     CONFIG: {
       headers : {
@@ -14,7 +13,6 @@
         'Content-Type' : 'application/json'
       }
     } 
-
   })
 
   .config([ '$routeProvider', function ($routeProvider) {
@@ -40,5 +38,20 @@
     })
     
   }])
+
+  .run([ '$rootScope', 'UserFactory', 'PARSE',
+
+    function ($rootScope, UserFactory, PARSE) {
+
+      $rootScope.$on('$routeChangeStart', function () {
+        
+        // Run my Login Status
+        UserFactory.status();
+
+      })
+    
+   }
+
+  ])
 
 }());

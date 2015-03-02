@@ -1,1 +1,8 @@
-<p>{{ welcome }}</p>
+<h2>Your Lists</h2>
+<!-- List Repeater will go here -->
+<hr>
+<h4>Add New List</h4>
+<form ng-submit="addList(list)">
+  <input ng-model="list.title" type="text" placeholder="List Title">
+  <button>Add List</button>
+</form>

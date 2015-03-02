@@ -18,12 +18,20 @@
   </head>
   <body>
 
-    <nav class="top-bar" data-topbar role="navigation">
+    <nav class="top-bar" data-topbar role="navigation" ng-controller="NavCtrl">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="#">Top 5 Lists</a></h1>
+          <h1><a href="#/">Top 5 Lists</a></h1>
         </li>
       </ul>
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li><a ng-hide="loggedin" href="#/login">Login</a></li>
+          <li><a ng-hide="loggedin" href="#/register">Register</a></li>
+          <li><a ng-show="loggedin" href="#" ng-click="logout()">Logout</a></li>
+        </ul>
+      </section>
     </nav>
 
     <div class="container row">
@@ -34,11 +42,13 @@
     <!-- bower:js -->
     <script src="../bower_components/angular/angular.min.js"></script>
     <script src="../bower_components/angular-route/angular-route.min.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
+    <script src="scripts/layout/nav.controller.js"></script>
     <script src="scripts/lists/lists.controller.js"></script>
     <script src="scripts/users/user.controller.js"></script>
     <script src="scripts/users/user.factory.js"></script>
