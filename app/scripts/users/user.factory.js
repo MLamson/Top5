@@ -10,14 +10,30 @@
     
       // Add a new User
       var addUser = function (userObj) {
+        $http.post(PARSE.URL + 'users', userObj, PARSE.CONFIG)
+          .then( function (res) {
+            console.log(res);
+          }
+        );
+      };
 
-        console.log(userObj);
-        //$http.post(PARSE.URL + 'users', userObj, PARSE.CONFIG);
+      // Log in a User
+      var loginUser = function (userObj) {
 
+        $http({
+          method: 'GET',
+          url: PARSE.URL + 'login',
+          headers: PARSE.CONFIG.headers,
+          params: userObj
+        }).then (function (res) {
+          console.log(res);
+        });
+        
       };
   
       return {
-        register : addUser 
+        register : addUser, 
+        login : loginUser
       };
 
     }

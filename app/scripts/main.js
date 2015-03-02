@@ -27,8 +27,10 @@
       controller: 'ListCtrl'
     })
 
+    // Login Page
     .when('/login', {
-      // Login Page
+      templateUrl: 'scripts/users/user.login.tpl.html',
+      controller: 'UserCtrl'
     })
 
     // Register page
