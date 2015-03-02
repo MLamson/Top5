@@ -31,8 +31,10 @@
       // Login Page
     })
 
+    // Register page
     .when('/register', {
-      // register page
+      templateUrl: 'scripts/users/user.register.tpl.html',
+      controller: 'UserCtrl'
     })
     
   }])
