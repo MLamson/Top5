@@ -1,6 +1,7 @@
-<h2>LIST TITLE</h2>
-
-
+<h2>{{ listTitle }}</h2>
+  <ul class="items">
+    <li ng-repeat="i in items">{{ i.title }} <span>X</span></li>
+  </ul>
 <hr>
 <h4>Add New Item</h4>
 <form ng-submit="addItem(item)">
