@@ -1,5 +1,9 @@
 <h2>Your Lists</h2>
-<!-- List Repeater will go here -->
+<ul>
+  <li ng-repeat="l in lists">{{ l.title }}</li>  
+</ul>
+
+
 <hr>
 <h4>Add New List</h4>
 <form ng-submit="addList(list)">

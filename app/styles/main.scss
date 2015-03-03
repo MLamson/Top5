@@ -5,3 +5,41 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
+
+h2 {
+  padding: 15px 0;
+}
+
+.items {
+
+}
+
+.lists, .items {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 25px;
+    border-left: 3px solid #000;
+    display: block;
+    padding-left: 15px;
+    background-color: lightblue;
+    a {
+      display: block;
+    }
+    span {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      font-weight: bold;
+      font-size: 20px;
+      display: block;
+      background-color: darkblue;
+      color: white;
+      padding: 4px 12px;
+      cursor: pointer;
+    }
+  }
+}

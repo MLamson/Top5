@@ -4,40 +4,18 @@
 
   angular.module('Top5')
 
-  .controller('ListCtrl', ['$scope', '$http', 'PARSE', 'UserFactory',
+  .controller('ListCtrl', ['$scope', 'ListsFactory',
 
-    function ($scope, $http, PARSE, UserFactory) {
+    function ($scope, ListsFactory) {
 
-      var user = UserFactory.user();
+      $scope.lists = [];
 
-      $http.get(PARSE.URL + 'classes/Lists', PARSE.CONFIG).then( function (r) { console.log(r); })
+      ListsFactory.get().success( function (response) {
+        $scope.lists = response.results;
+      });
     
       $scope.addList = function (listObj) {
-
-        // Add User Pointer to my list object
-        listObj.user = {
-          __type: 'Pointer',
-          className: '_User',
-          objectId: user.objectId
-        }
-
-        // Set up Access Control
-
-        var ACLObj = {};
-        ACLObj[user.objectId] = {
-          'read' : true,
-          'write' : true
-        }
-
-        listObj.ACL = ACLObj;
-
-        $http.post(PARSE.URL + 'classes/Lists', listObj, PARSE.CONFIG)
-          .then( function (res) {
-            console.log(res);
-          }
-        );
-
-
+        ListsFactory.add(listObj);
       }
 
 
