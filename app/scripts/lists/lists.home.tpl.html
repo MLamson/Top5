@@ -1,6 +1,6 @@
 <h2>Your Lists</h2>
-<ul>
-  <li ng-repeat="l in lists">{{ l.title }}</li>  
+<ul class="lists">
+  <li ng-repeat="l in lists"><a href="#/lists/{{ l.objectId }}">{{ l.title }}</a> <span ng-click="deleteMe(l.objectId, $index)">X</span></li>  
 </ul>
 
 

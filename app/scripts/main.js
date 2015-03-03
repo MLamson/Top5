@@ -36,6 +36,15 @@
       templateUrl: 'scripts/users/user.register.tpl.html',
       controller: 'UserCtrl'
     })
+
+    // Single List Page
+    .when('/lists/:id', {
+      templateUrl: 'scripts/items/items.list.tpl.html',
+      controller: 'ItemsCtrl'
+    })
+
+    // Go Home ET
+    .otherwise('/');
     
   }])
 

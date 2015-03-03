@@ -37,8 +37,8 @@
         return $http.post(PARSE.URL + 'classes/Lists', listObj, PARSE.CONFIG);
       };
 
-      var deleteList = function () {
-
+      var deleteList = function (id) {
+        return $http.delete(PARSE.URL + 'classes/Lists/' + id, PARSE.CONFIG);
       };
     
   
